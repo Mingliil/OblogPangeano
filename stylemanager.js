@@ -6,11 +6,33 @@
     $('.box').css('background-color', '');
   });
 });*/
-document.getElementById("ultrablog").onmouseover = () =>{
-    document.getElementById("imagens").style.backgroundImage = 'url(ultrablog/CoinPunching.png)';
-    document.getElementById("imagens").style.backgroundSize = "100%";
+let imgOld = "";
+const imgTopo = document.getElementById("topo")
+const imagem = document.getElementById("baixo");
+
+document.getElementById("ultrablog").onmouseenter = () =>{
+imgSwitch('ultrablog/CoinPunching.png');
 }
-document.getElementById("blogtv").onmouseover = () =>{
-    document.getElementById("imagens").style.backgroundImage = 'url(ultrablog/CoinPunching.png)';
-    document.getElementById("imagens").style.backgroundSize = "100%";
+document.getElementById("blogtv").onmouseenter = () =>{
+imgSwitch('BlogDa---/imgs/aaming.png');
+}
+document.getElementById("frostBlog").onmouseenter = () =>{
+imgSwitch('FrostBlog/Frostpunk.jpg');
+}
+
+
+function imgSwitch(imgNew){
+    if (imgTopo.classList.contains('transparent')){
+    setTimeout(function(){
+      imgTopo.classList.remove('transparent');
+      setTimeout(function(){
+        imgTopo.classList.add('transparent');
+          imagem.src = imgNew;
+      }, 1000)
+      }, 100)
+  }
+  else{
+    imgTopo.classList.add('transparent');
+    imagem.src = imgNew;
+  }
 }
