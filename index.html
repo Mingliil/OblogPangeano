@@ -14,24 +14,39 @@
   }
   
 
-#imagens{
+body{
     width:100%;
     height:100%;
     background-image:none;
-    transition: background-image 5s;
     font-family: 'VCR_OSD';
 }
-#imagens.ultra{
-    background-image:"url(ultrablog/CoinPunching.png)"
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
+.transparent {
+opacity:0;
+}
+
 </style>
 </head>
-<body id="imagens">
-    <div class="container d-flex align-items-center justify-content-center min-vh-100">
-        <div class="text-center">
+<body id="imagens" class="image-url-smooth">
+    <img id="baixo" class="z-0 position-absolute d-flex align-items-center justify-content-center min-vh-100" src="ultrablog/CoinPunching.png">
+    <img id="topo" class="z-0 position-absolute d-flex align-items-center justify-content-center min-vh-100" src="fundo.png">
+    <div  class="d-flex align-items-center justify-content-center min-vh-100 z-1 position-absolute container">
+        <div class=" rounded text-center text-bg-dark" style="width: 200px;">
+            <br>
             <a id="blogtv" href="BlogDa---/blogdatv.html" type="button" class="btn btn-outline-secondary"><span style="color: aliceblue;">Blog de uma Tv</span></a><br>
             <br>
-            <a id="ultrablog" type="button" class="btn btn-outline-danger">Ultrakill blog</a>
+            <a href="ultrablog/ultrablog.html" id="ultrablog" type="button" class="btn btn-outline-danger">Ultrakill blog</a>
+            <br><br>
+            <a href="FrostBlog/FrostBlog.html" id="frostBlog" type="button" class="btn btn-outline-info">Frostpunk Blog</a>
+            <br><br>
         </div>
     </div>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
